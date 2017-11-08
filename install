@@ -30,7 +30,7 @@ import subprocess
 def usage():
 
     print( '''\
-Install the tudelft poster class in a texmf tree.
+Install the lmu poster class in a texmf tree.
 
 Usage:
 
@@ -86,7 +86,7 @@ else:
 
 # check existing installation
 
-path = kpsewhich( 'tudelftposter.cls' )
+path = kpsewhich( 'lmuposter.cls' )
 if path and not path.startswith( texmf ):
     print( '''\
 ERROR: Already installed in a different location:
@@ -109,7 +109,7 @@ if not os.path.isdir( texmf ):
     print( 'ERROR: The specified texmf root `{}` is not a directory.'.format( texmf ) )
     raise SystemExit( 1 )
 
-texmf_class = os.path.join( texmf, 'tex', 'latex', 'tudelftposter' )
+texmf_class = os.path.join( texmf, 'tex', 'latex', 'lmuposter' )
 if not os.path.exists( texmf_class ):
     try:
         os.makedirs( texmf_class )
@@ -125,7 +125,7 @@ if not os.path.isdir( texmf_class ):
 src = os.path.split( __file__ )[0]
 
 batch = []
-for f in ( 'tudelftposter.cls', 'tudelft.pdf' ):
+for f in ( 'lmuposter.cls', 'lmu.pdf' ):
     s = os.path.join( src, f )
     if not os.path.exists( s ):
         print( 'ERROR: Cannot find `{}`'.format( f ) )
@@ -143,10 +143,10 @@ for s, d in batch:
 
 # update ls-R files, if necessary
 
-if not kpsewhich( 'tudelftposter.cls' ):
+if not kpsewhich( 'lmuposter.cls' ):
     p = subprocess.Popen( ( 'mktexlsr', ), stdout = subprocess.PIPE )
     p.communicate()
-if not kpsewhich( 'tudelftposter.cls' ):
+if not kpsewhich( 'lmuposter.cls' ):
     print( '''\
 WARNING: (pdf,lua)latex cannot find the installed files.  Please add the
 specified texmf directory to the tex configuration files or install in the texmf

@@ -1,7 +1,9 @@
-tudelft-poster
-==============
+lmu-poster
+==========
 
-A latex class for TU Delft posters.
+Based on tudelft-poster (Thanks guys !). [Check it out !](https://github.com/tudelft-diam-na/latex-poster-class)
+
+A latex class for Le Mans Université posters.
 
 *   This class requires a latex compiler generating a pdf, e.g. `pdflatex` or
     `lualatex`.  Plain `latex` is not supported.
@@ -37,8 +39,8 @@ Either clone [this repository][github-repository] using git or download and
 unzip [this zip file][github-zip].  No installation is required as long as you
 put your `.tex` file in the same directory as `tudelftposter.cls`.
 
-[github-repository]: https://github.com/tudelft-diam-na/latex-poster-class.git
-[github-zip]: https://github.com/tudelft-diam-na/latex-poster-class/archive/master.zip
+[github-repository]: https://github.com/Matael/lmu-poster-class.git
+[github-zip]: https://github.com/Matael/lmu-poster-class/archive/master.zip
 
 Linux
 -----
@@ -57,7 +59,7 @@ Usage
 
 Begin your latex document with the line
 
-    \documentclass{tudelftposter}
+    \documentclass{lmuposter}
 
 The class supports the following options:
 
@@ -73,7 +75,18 @@ The class supports the following options:
 
 You can pass options to the class in the usual way, e.g.
 
-    \documentclass[landscape,ncolumns=4]{tudelftposter}
+    \documentclass[landscape,ncolumns=4]{lmuposter}
+
+Colors
+------
+
+To ease usage of the University's theme, the following colors are defined :
+
+- lmuorange
+- lmulightblue
+- lmudarkblue
+- lmulightgrey
+- lmudarkgrey
 
 Header
 ------
@@ -104,13 +117,13 @@ default symbol of this note to `MARK`.
 
 The style of the title, authors and author notes are defined in the commands
 
-* `\tudstyleheadtitle`,
-* `\tudstyleheadauthors` and
-* `\tudstyleheadauthornotes`.
+* `\lmustyleheadtitle`,
+* `\lmustyleheadauthors` and
+* `\lmustyleheadauthornotes`.
 
 You can redefine the styles in the preamble using `\renewcommand`.  For example:
 
-    \renewcommand{\tudstyleheadtitle}{%
+    \renewcommand{\lmustyleheadtitle}{%
         \normalfont\rmfamily\color{white}\large\scshape}
 
 Footer
@@ -173,7 +186,7 @@ a URL.
 
 The command `\addfoottext` places `TEXT` on the text bar.
 
-Note that the TU Delft logo is *not* automatically added.  See the example below
+Note that the Le Mans Université logo is *not* automatically added.  See the example below
 how to add the logo.
 
 Document body
@@ -189,11 +202,11 @@ e.g. serif, add the following line to the preamble:
     \renewcommand{\familydefault}{\rmdefault}
 
 The style of sections, the title, authors and author notes are defined in the
-command `\tudstylesection`.  You can redefine the styles in the preamble using
+command `\lmustylesection`.  You can redefine the styles in the preamble using
 `\renewcommand`.  For example:
 
-    \renewcommand{\tudstylesection}{%
-        \normalfont\rmfamily\Large\scshape\color{tudcyan}}
+    \renewcommand{\lmustylesection}{%
+        \normalfont\rmfamily\Large\scshape\color{lmulightblue}}
 
 Tikz body
 ---------
@@ -203,7 +216,7 @@ create a `tikzpicture` environment and start drawing.  This class provides a
 special tikz node `body` which defines the drawable area.  The following example
 draws a rectangle indicating the drawable area.
 
-    \documentclass{tudelftposter}
+    \documentclass{lmuposter}
     % preamble ...
     \begin{document}
         \begin{tikzpicture}[remember picture,overlay]
@@ -216,19 +229,19 @@ You can use the preamble from the example below.
 Example
 -------
 
-    \documentclass{tudelftposter}
+    \documentclass{lmuposter}
 
     \title{The title}
 
     \addauthor[mail One,A]{Author One}
     \addauthor[A,B]{Author Two}
 
-    \addauthornote{mail One}[@]{\ttfamily author.one@tudelft.nl}
-    \addauthornote{A}{Delft Institute of Applied Mathematics}
+    \addauthornote{mail One}[@]{\ttfamily author.one@univ-lemans.fr}
+    \addauthornote{A}{Some institute}
     \addauthornote{B}{Some other institute}
 
-    \addfootimage(c:right column.center)[DIAM, TU Delft]{tudelft}
-    \addfootqrcode(l:left column.left)[web page]{http://ta.twi.tudelft.nl}
+    \addfootimage(c:right column.center)[Lab, UMR....]{lmu}
+    \addfootqrcode(l:left column.left)[web page]{http://univ-lemans.fr}
 
     \begin{document}
         \section{Introduction}

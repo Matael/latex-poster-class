@@ -18,7 +18,7 @@
 % OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 % THE SOFTWARE.
 %
-\documentclass{tudelftposter}
+\documentclass{lmuposter}
 
 % optional, makes QR code clickable
 \usepackage[hidelinks,implicit=false,bookmarks=false]{hyperref}
@@ -27,17 +27,18 @@
 
 \title{The Title}
 
-\addauthornote{mail}[@]{\ttfamily j.f.nash@tudelft.nl}
-\addauthornote{diam}{Delft Institute of Applied Mathematics, TU Delft}
-\addauthornote{tp}{Department of Theoretical Physics, TU Delft}
+\addauthornote{mail}[@]{\ttfamily john@doe.org}
+\addauthornote{diam}{Department of Something, Somewhere}
+\addauthornote{tp}{Department of Whatever, IDCU}
 
-\addauthor[mail,diam]{J.F. Nash}
-\addauthor[diam,tp]{C.F. Gau{\ss}}
-\addauthor[diam]{J. von Neumann}
-\addauthor[tp]{R.P. Feynman}
+\addauthor[mail,diam]{John Doe}
+\addauthor[diam,tp]{Leto Atreides}
+\addauthor[diam]{Feyd Rautha}
+\addauthor[tp]{H.P. Lovecraft}
 
-\addfootimage(c:right column.center)[Delft Institute of Applied Mathematics]{tudelft}
-\addfootqrcode(l:left column.left)[latex-poster-class repository]{https://github.com/tudelft-diam-na/latex-poster-class}
+\addfootimage(c:right column.center)[Department of Physics]{lmu}
+\addfootqrcode(l:left column.left)[latex-poster-class repository]{https://github.com/Matael/lmu-poster-class}
+
 
 \newlength{\textboxwidth}
 \newlength{\textboxcolumnsep}\setlength{\textboxcolumnsep}{1em}
@@ -89,7 +90,7 @@
       \setlength{\parindent}{1em}%
       \par\noindent%
       {% title
-        \color{tudcyan}\rm\scshape%
+        \color{lmulightblue}\rm\scshape%
         \centeredhrulefill\hspace{1em}%
         \textboxtitle%
         \hspace{1em}\centeredhrulefill}%
@@ -205,7 +206,7 @@ at ([shift={(0pt,-37cm)}]body.north east) [below left] {%
       (1,0) node[anchor=north] {1}
       (2,0) node[anchor=north] {2}
       (3,0) node[anchor=north] {3};
-    \draw [tudcyan] plot [smooth, tension=1]
+    \draw [lmulightblue] plot [smooth, tension=1]
       coordinates {(0,0) (1,2) (2,1) (3,3)};
   \end{tikzpicture}};
 \node at ([shift={(-2ex,0)}]fig1.south west) [above left] {%
@@ -216,7 +217,7 @@ at ([shift={(0pt,-37cm)}]body.north east) [below left] {%
     Morbi fringilla, wisi in dignissim interdum, justo lectus sagittis dui, et
     vehicula libero dui cursus dui
   \end{minipage}};
-\draw[tudcyan] ([shift={(-1ex,0)}]fig1.south west)--([shift={(-1ex,0)}]fig1.north west);
+\draw[lmulightblue] ([shift={(-1ex,0)}]fig1.south west)--([shift={(-1ex,0)}]fig1.north west);
 
 \end{tikzpicture}
 \end{document}
